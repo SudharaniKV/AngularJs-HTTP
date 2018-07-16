@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <header ng-include="'views/menu.html'"> -->
+    
+    <ng-view></ng-view>
+<div ng-controller="myCtr">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>photo</th>
+            <th>runs</th>
+        </tr>
+
+         <tr ng-repeat="player in players">
+             <td> {{player.userId}}</td> 
+             <td> {{player.id}}</td> 
+             <td>{{player.title}}"/></td> 
+             <td> {{player.body}}</td> 
+        </tr>
+    </table>
+    <form ng-submit="addUsers()">
+        <input type="text" ng-model="userId"><br/>
+        <input type="text" ng-model="id"><br/>
+        <input type="text" ng-model="title"><br/>
+        <input type="text" ng-model="body"><br/>
+    </form>
+</div>
+    <script src="/angular.js"></script>
+    <script src="/angular-route.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
